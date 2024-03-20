@@ -18,7 +18,7 @@ def write(x: int) -> None:
 
 
 calculation: int = 7
-s1: float = 0
+s1: int = 0
 # The calculation variable keeps the data of operation
 # First it assigned to 7, but later the value will be changed
 # s1 variable is keeping the first number
@@ -34,7 +34,7 @@ def operations(x: int) -> None:
     global calculation
     calculation = x
     global s1
-    s1 = float(start.get())
+    s1 = int(start.get())
     print(calculation)
     print(s1)
     start.delete(0, "end")
@@ -46,7 +46,7 @@ def operations(x: int) -> None:
 # The first number entered by the user is assigned to the s1 variable
 # and the input part is deleted with the start.delete() method
 
-s2: float = 0
+s2: int = 0
 # s2 variable is keeping the second number
 
 
@@ -55,7 +55,7 @@ def calculate() -> None:
     This function performs the calculation and displays the result.
     """
     global s2
-    s2 = float(start.get())
+    s2 = int(start.get())
     print(s2)
     global calculation
     result = 0
@@ -67,7 +67,9 @@ def calculate() -> None:
         result = s1 * s2
     elif calculation == 3:
         result = s1 / s2
-    start.delete(0, "end")  # Deleting the first number from the screen before entering the second number
+    start.delete(
+        0, "end"
+    )  # Deleting the first number from the screen before entering the second number
     start.insert(0, str(result))
 
 
